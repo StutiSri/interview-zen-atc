@@ -16,4 +16,12 @@ class ParenthesesValidatorTest {
         assert !valid;
         System.out.println(valid);
     }
+
+    @Test
+    void test3() {
+        String expression = "[}";
+        boolean valid = new ParenthesesValidator().isValid(expression);
+        assert !valid;
+        System.out.println(valid);
+    }
 }
