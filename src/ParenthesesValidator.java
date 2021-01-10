@@ -2,7 +2,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ParenthesesValidator {
-    class Stack {
+
+    class Stack{
 
         private final char[] elements;
         private int size;
@@ -37,10 +38,9 @@ public class ParenthesesValidator {
         return false;
     }
 
-    private void openCloseParenthesesMap() {
+    private Map<Character, Character> openCloseParenthesesMap() {
         Map<Character, Character> openCloseParenthesesMap = new HashMap<>();
 
         return openCloseParenthesesMap;
     }
 }
-
