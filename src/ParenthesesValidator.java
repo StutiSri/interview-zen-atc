@@ -46,6 +46,24 @@ class ParenthesesValidator {
         return true;
     }
 
+    public static void main(String[] args) {
+        System.out.println(new ParenthesesValidator().isValid("[]"));
+
+        System.out.println(new ParenthesesValidator().isValid("[}"));
+
+        System.out.println(new ParenthesesValidator().isValid("[()(){}]"));
+
+        System.out.println(new ParenthesesValidator().isValid("[{()}{()}]"));
+
+        System.out.println(new ParenthesesValidator().isValid("[(({})]"));
+
+        System.out.println(new ParenthesesValidator().isValid("[({)}]"));
+
+        System.out.println(new ParenthesesValidator().isValid(""));
+
+    }
+
+
     private boolean isMatchingClosingParentheses(Map<Character, Character> openCloseParenthesesMap, char openingParentheses, char parentheses) {
         char expectedClosingParentheses = openCloseParenthesesMap.get(openingParentheses);
         return expectedClosingParentheses == parentheses;
