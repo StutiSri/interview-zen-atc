@@ -17,6 +17,13 @@ public class ParenthesesValidator {
             }
             elements[++top] = data;
         }
+
+        public char pop(){
+            if(top == -1){
+                throw new RuntimeException("Underflow!");
+            }
+            return elements[top--];
+        }
     }
 
     public boolean isValid(String expression) {
