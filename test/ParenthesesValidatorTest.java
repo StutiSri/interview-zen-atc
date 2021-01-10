@@ -19,9 +19,17 @@ class ParenthesesValidatorTest {
 
     @Test
     void test3() {
-        String expression = "[}";
+        String expression = "[()(){}]";
         boolean valid = new ParenthesesValidator().isValid(expression);
-        assert !valid;
+        assert valid;
+        System.out.println(valid);
+    }
+
+    @Test
+    void test3() {
+        String expression = "[()(){}]";
+        boolean valid = new ParenthesesValidator().isValid(expression);
+        assert valid;
         System.out.println(valid);
     }
 }
