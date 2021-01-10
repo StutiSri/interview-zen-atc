@@ -52,6 +52,13 @@ class ParenthesesValidator {
     boolean isValid(String expression) {
         Stack exprStack = new Stack(expression.length());
         Map<Character, Character> openCloseParenthesesMap = getOpenCloseParenthesesMap();
+        /*
+         * Iterate through each of the characters in the expression.
+         * For each character if its of type open parentheses, push it to the stack
+         * If its not, pop the top element from the stack. In order for the expression to be valid the
+         * popped element should be the opening parentheses for the new character which is a closing parentheses.
+         * Utilizing the openCloseParenthesesMap created earlier to validate the open close parentheses to keep the validation in O(1) time.
+         */
         for (char parentheses : expression.toCharArray()) {
             if (isOpeningParentheses(parentheses)) {
                 exprStack.push(parentheses);
@@ -80,6 +87,8 @@ class ParenthesesValidator {
 
         System.out.println(new ParenthesesValidator().isValid(""));
 
+        System.out.println(new ParenthesesValidator().isValid("({({({({({({(["));
+
     }
 
 
@@ -93,7 +102,6 @@ class ParenthesesValidator {
     }
 
     /**
-     *
      * @return - A mapping of opening parentheses with its closing counterpart to
      * keep the search for expected closing parentheses in O(1) time
      */
