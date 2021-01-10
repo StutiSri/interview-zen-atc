@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class ParenthesesValidator {
     class Stack {
 
@@ -27,7 +30,17 @@ public class ParenthesesValidator {
     }
 
     public boolean isValid(String expression) {
+        openCloseParenthesesMap();
+        for (char parentheses : expression.toCharArray()) {
+
+        }
         return false;
+    }
+
+    private void openCloseParenthesesMap() {
+        Map<Character, Character> openCloseParenthesesMap = new HashMap<>();
+
+        return openCloseParenthesesMap;
     }
 }
 
