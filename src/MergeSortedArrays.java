@@ -32,35 +32,43 @@ public class MergeSortedArrays {
     }
 
     public static void main(String[] args) {
-        int[] arr1 = new int[]{1, 2, 3};
-        int[] arr2 = new int[]{1, 1, 2};
+        int[] arr1;
+        int[] arr2;
 
-        int[] mergedArray = new MergeSortedArrays().merge(arr1, arr2);
-        int[] expectedMergedArr = new int[]{1, 1, 1, 2, 2, 3};
-        for (int i = 0; i < mergedArray.length; i++) {
-            assert mergedArray[i] == expectedMergedArr[i];
-        }
-        System.out.println("Case 1 is passed");
+        int[] mergedArray;
 
+        mergeArrays();
         arr1 = new int[]{1, 2, 3};
         arr2 = new int[]{2, 4, 6};
 
         mergedArray = new MergeSortedArrays().merge(arr1, arr2);
-        expectedMergedArr = new int[]{1, 2, 2, 3, 4, 6};
-        for (int i = 0; i < mergedArray.length; i++) {
-            assert mergedArray[i] == expectedMergedArr[i];
+        for (int value : mergedArray) {
+            System.out.print(value + " ");
         }
-        System.out.println("Case 2 is passed");
+        System.out.println();
 
         arr1 = new int[]{1, 2, 3, 4};
         arr2 = new int[]{2, 4, 6};
 
         mergedArray = new MergeSortedArrays().merge(arr1, arr2);
-        expectedMergedArr = new int[]{1, 2, 2, 3, 4, 4, 6};
-        for (int i = 0; i < mergedArray.length; i++) {
-            assert mergedArray[i] == expectedMergedArr[i];
+        for (int value : mergedArray) {
+            System.out.print(value + " ");
         }
-        System.out.println("Case 3 is passed");
+        System.out.println();
+    }
+
+    private static void mergeArrays() {
+        int[] arr1;
+        int[] arr2;
+        int[] mergedArray;
+        arr1 = new int[]{1, 2, 3};
+        arr2 = new int[]{1, 1, 2};
+
+        mergedArray = new MergeSortedArrays().merge(arr1, arr2);
+        for (int value : mergedArray) {
+            System.out.print(value + " ");
+        }
+        System.out.println();
     }
 }
 
