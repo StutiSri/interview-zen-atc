@@ -33,9 +33,10 @@ public class MergeSortedArrays {
         int[] arr1;
         int[] arr2;
 
+        arr1 = new int[]{1, 2, 3};
         int[] mergedArray;
 
-        mergeArrays(arr1);
+        mergeArrays(arr1, arr2);
         arr1 = new int[]{1, 2, 3};
         arr2 = new int[]{2, 4, 6};
 
@@ -55,11 +56,9 @@ public class MergeSortedArrays {
         System.out.println();
     }
 
-    private static void mergeArrays(int[] arr11) {
-        int[] arr1;
+    private static void mergeArrays(int[] arr1, int[] arr2) {
         int[] arr2;
         int[] mergedArray;
-        arr11 = new int[]{1, 2, 3};
         arr2 = new int[]{1, 1, 2};
 
         mergedArray = new MergeSortedArrays().merge(arr1, arr2);
