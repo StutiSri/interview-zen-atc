@@ -28,6 +28,16 @@ public class MergeSortedArrays {
 
         return mergedArr;
     }
+
+    public static void main(String[] args) {
+        int[] arr1 = new int[]{};
+        int[] arr2 = new int[]{};
+
+        int[] merge = new MergeSortedArrays().merge(arr1, arr2);
+        for (int num : merge) {
+            System.out.print(num + " ");
+        }
+    }
 }
 
 
