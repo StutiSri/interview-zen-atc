@@ -60,6 +60,8 @@ public class MergeSortedArrays {
         mergeArrays(new int[]{}, new int[]{});
 
         mergeArrays(new int[]{1, 2, 3, 5, 6}, new int[]{4});
+
+        mergeArrays(new int[]{1, 2, 3, 4, 5, 6}, new int[]{10});
     }
 
     private static void mergeArrays(int[] arr1, int[] arr2) {
