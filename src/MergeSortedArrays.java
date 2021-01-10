@@ -1,5 +1,3 @@
-import javax.sound.midi.Soundbank;
-
 public class MergeSortedArrays {
     public int[] merge(int[] arr1, int[] arr2) {
         int n = arr1.length;
@@ -37,7 +35,7 @@ public class MergeSortedArrays {
 
         int[] mergedArray;
 
-        mergeArrays();
+        mergeArrays(arr1);
         arr1 = new int[]{1, 2, 3};
         arr2 = new int[]{2, 4, 6};
 
@@ -57,11 +55,11 @@ public class MergeSortedArrays {
         System.out.println();
     }
 
-    private static void mergeArrays() {
+    private static void mergeArrays(int[] arr11) {
         int[] arr1;
         int[] arr2;
         int[] mergedArray;
-        arr1 = new int[]{1, 2, 3};
+        arr11 = new int[]{1, 2, 3};
         arr2 = new int[]{1, 1, 2};
 
         mergedArray = new MergeSortedArrays().merge(arr1, arr2);
