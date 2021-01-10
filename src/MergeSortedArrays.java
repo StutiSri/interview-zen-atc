@@ -7,22 +7,24 @@ public class MergeSortedArrays {
         int i = 0;
         int j = 0;
         int k = 0;
-        while (i < n && j < m){
-            if(arr1[i] < arr2[j]){
+        while (i < n && j < m) {
+            if (arr1[i] < arr2[j]) {
                 mergedArr[k] = arr1[i];
-                i++;;
-            }else {
+                i++;
+                ;
+            } else {
                 mergedArr[k] = arr2[j];
-                j++;;
+                j++;
+                ;
             }
             k++;
         }
 
-        while (i < n){
+        while (i < n) {
             mergedArr[k++] = arr1[i++];
         }
 
-        while (j < m){
+        while (j < m) {
             mergedArr[k++] = arr2[j++];
         }
 
@@ -30,38 +32,17 @@ public class MergeSortedArrays {
     }
 
     public static void main(String[] args) {
-        int[] arr1;
-        int[] arr2;
 
-        arr1 = new int[]{1, 2, 3};
-        int[] mergedArray;
+        mergeArrays(new int[]{1, 2, 3}, new int[]{1, 2, 3});
 
-        mergeArrays(arr1, arr2);
-        arr1 = new int[]{1, 2, 3};
-        arr2 = new int[]{2, 4, 6};
+        mergeArrays(new int[]{1, 2, 3}, new int[]{2, 4, 6});
 
-        mergedArray = new MergeSortedArrays().merge(arr1, arr2);
-        for (int value : mergedArray) {
-            System.out.print(value + " ");
-        }
-        System.out.println();
+        mergeArrays(new int[]{1, 2, 3, 4}, new int[]{2, 4, 6});
 
-        arr1 = new int[]{1, 2, 3, 4};
-        arr2 = new int[]{2, 4, 6};
-
-        mergedArray = new MergeSortedArrays().merge(arr1, arr2);
-        for (int value : mergedArray) {
-            System.out.print(value + " ");
-        }
-        System.out.println();
     }
 
     private static void mergeArrays(int[] arr1, int[] arr2) {
-        int[] arr2;
-        int[] mergedArray;
-        arr2 = new int[]{1, 1, 2};
-
-        mergedArray = new MergeSortedArrays().merge(arr1, arr2);
+        int[] mergedArray = new MergeSortedArrays().merge(arr1, arr2);
         for (int value : mergedArray) {
             System.out.print(value + " ");
         }
