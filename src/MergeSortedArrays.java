@@ -1,3 +1,5 @@
+import javax.sound.midi.Soundbank;
+
 public class MergeSortedArrays {
     public int[] merge(int[] arr1, int[] arr2) {
         int n = arr1.length;
@@ -38,6 +40,7 @@ public class MergeSortedArrays {
         for (int i = 0; i < mergedArray.length; i++) {
             assert mergedArray[i] == expectedMergedArr[i];
         }
+        System.out.println("Case 1 is passed");
 
         arr1 = new int[]{1, 2, 3};
         arr2 = new int[]{2, 4, 6};
@@ -47,15 +50,17 @@ public class MergeSortedArrays {
         for (int i = 0; i < mergedArray.length; i++) {
             assert mergedArray[i] == expectedMergedArr[i];
         }
+        System.out.println("Case 2 is passed");
 
-        arr1 = new int[]{1, 2, 3};
+        arr1 = new int[]{1, 2, 3, 4};
         arr2 = new int[]{2, 4, 6};
 
         mergedArray = new MergeSortedArrays().merge(arr1, arr2);
-        expectedMergedArr = new int[]{1, 2, 2, 3, 4, 6};
+        expectedMergedArr = new int[]{1, 2, 2, 3, 4, 4, 6};
         for (int i = 0; i < mergedArray.length; i++) {
             assert mergedArray[i] == expectedMergedArr[i];
         }
+        System.out.println("Case 3 is passed");
     }
 }
 
