@@ -3,18 +3,28 @@ import java.util.Map;
 
 class ParenthesesValidator {
 
+    /**
+     * Basic Stack class implementation for char elements
+     */
     class Stack {
 
         private final char[] elements;
         private int size;
         private int top;
 
+        /**
+         * @param size - The max expected elements in this stack
+         */
         Stack(int size) {
             elements = new char[size];
             this.size = size;
             top = -1;
         }
 
+        /**
+         * @param data - If the stack is not full, push the elements to the top of the stack
+         *             Throw RuntimeException if the stack is full
+         */
         void push(char data) {
             if (top == size - 1) {
                 throw new RuntimeException("Overflow!");
@@ -22,6 +32,10 @@ class ParenthesesValidator {
             elements[++top] = data;
         }
 
+        /**
+         *
+         * @return - If the stack is not empty return the top element of the stack
+         */
         char pop() {
             if (top == -1) {
                 throw new RuntimeException("Underflow!");
@@ -30,6 +44,11 @@ class ParenthesesValidator {
         }
     }
 
+    /**
+     *
+     * @param expression - The expression string with parentheses that needs to be validated
+     * @return - return true if the expression is valid, else false.
+     */
     boolean isValid(String expression) {
         Stack exprStack = new Stack(expression.length());
         Map<Character, Character> openCloseParenthesesMap = getOpenCloseParenthesesMap();
@@ -73,6 +92,11 @@ class ParenthesesValidator {
         return parentheses == '(' || parentheses == '{' || parentheses == '[';
     }
 
+    /**
+     *
+     * @return - A mapping of opening parentheses with its closing counterpart to
+     * keep the search for expected closing parentheses in O(1) time
+     */
     private Map<Character, Character> getOpenCloseParenthesesMap() {
         Map<Character, Character> openCloseParenthesesMap = new HashMap<>();
         openCloseParenthesesMap.put('{', '}');
