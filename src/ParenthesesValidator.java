@@ -1,42 +1,52 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class ParenthesesValidator {
+class ParenthesesValidator {
 
-    class Stack{
+    class Stack {
 
         private final char[] elements;
         private int size;
         private int top;
 
-        public Stack(int size) {
+        Stack(int size) {
             elements = new char[size];
             this.size = size;
             top = -1;
         }
 
-        public void push(char data){
-            if(top == size - 1){
+        void push(char data) {
+            if (top == size - 1) {
                 throw new RuntimeException("Overflow!");
             }
             elements[++top] = data;
         }
 
-        public char pop(){
-            if(top == -1){
+        char pop() {
+            if (top == -1) {
                 throw new RuntimeException("Underflow!");
             }
             return elements[top--];
         }
     }
 
-    public boolean isValid(String expression) {
-        getOpenCloseParenthesesMap();
+    boolean isValid(String expression) {
+        Stack exprStack = new Stack(expression.length());
+        Map<Character, Character> openCloseParenthesesMap = getOpenCloseParenthesesMap();
         for (char parentheses : expression.toCharArray()) {
-
+            if (isOpeningParentheses(parentheses)) {
+                exprStack.push(parentheses);
+            } else {
+                char openingParentheses = exprStack.pop();
+                if (!isMatchingClosingParentheses(openCloseParenthesesMap, openingParentheses, parentheses)) {
+                    return false;
+                }
+            }
         }
-        return false;
+        return true;
     }
+
+
 
     private Map<Character, Character> getOpenCloseParenthesesMap() {
         Map<Character, Character> openCloseParenthesesMap = new HashMap<>();
