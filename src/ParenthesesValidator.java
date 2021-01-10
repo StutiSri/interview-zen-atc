@@ -46,7 +46,9 @@ class ParenthesesValidator {
         return true;
     }
 
-
+    private boolean isOpeningParentheses(char parentheses) {
+        return parentheses == '(' || parentheses == '{' || parentheses == '[';
+    }
 
     private Map<Character, Character> getOpenCloseParenthesesMap() {
         Map<Character, Character> openCloseParenthesesMap = new HashMap<>();
