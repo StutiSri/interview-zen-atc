@@ -58,6 +58,8 @@ public class MergeSortedArrays {
         mergeArrays(new int[]{1, 2, 3, 4}, new int[]{2, 4, 6});
 
         mergeArrays(new int[]{}, new int[]{});
+
+        mergeArrays(new int[]{1, 2, 3, 5, 6}, new int[]{4});
     }
 
     private static void mergeArrays(int[] arr1, int[] arr2) {
