@@ -31,14 +31,14 @@ public class ParenthesesValidator {
     }
 
     public boolean isValid(String expression) {
-        openCloseParenthesesMap();
+        getOpenCloseParenthesesMap();
         for (char parentheses : expression.toCharArray()) {
 
         }
         return false;
     }
 
-    private Map<Character, Character> openCloseParenthesesMap() {
+    private Map<Character, Character> getOpenCloseParenthesesMap() {
         Map<Character, Character> openCloseParenthesesMap = new HashMap<>();
         openCloseParenthesesMap.put('{', '}');
         openCloseParenthesesMap.put('(', ')');
