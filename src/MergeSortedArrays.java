@@ -40,10 +40,10 @@ public class MergeSortedArrays {
         }
 
         arr1 = new int[]{1, 2, 3};
-        arr2 = new int[]{1, 1, 2};
+        arr2 = new int[]{2, 4, 6};
 
         mergedArray = new MergeSortedArrays().merge(arr1, arr2);
-        expectedMergedArr = new int[]{1, 1, 1, 2, 2, 3};
+        expectedMergedArr = new int[]{1, 2, 2, 3, 4, 6};
         for (int i = 0; i < mergedArray.length; i++) {
             assert mergedArray[i] == expectedMergedArr[i];
         }
