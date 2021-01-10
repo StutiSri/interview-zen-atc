@@ -46,6 +46,11 @@ class ParenthesesValidator {
         return true;
     }
 
+    private boolean isMatchingClosingParentheses(Map<Character, Character> openCloseParenthesesMap, char openingParentheses, char parentheses) {
+        char expectedClosingParentheses = openCloseParenthesesMap.get(openingParentheses);
+        return expectedClosingParentheses == parentheses;
+    }
+
     private boolean isOpeningParentheses(char parentheses) {
         return parentheses == '(' || parentheses == '{' || parentheses == '[';
     }
