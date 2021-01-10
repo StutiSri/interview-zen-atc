@@ -40,4 +40,12 @@ class ParenthesesValidatorTest {
         assert !valid;
         System.out.println(valid);
     }
+
+    @Test
+    void test6() {
+        String expression = "[({)}]";
+        boolean valid = new ParenthesesValidator().isValid(expression);
+        assert !valid;
+        System.out.println(valid);
+    }
 }
