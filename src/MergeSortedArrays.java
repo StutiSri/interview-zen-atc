@@ -30,12 +30,22 @@ public class MergeSortedArrays {
     }
 
     public static void main(String[] args) {
-        int[] arr1 = new int[]{};
-        int[] arr2 = new int[]{};
+        int[] arr1 = new int[]{1, 2, 3};
+        int[] arr2 = new int[]{1, 1, 2};
 
-        int[] merge = new MergeSortedArrays().merge(arr1, arr2);
-        for (int num : merge) {
-            System.out.print(num + " ");
+        int[] mergedArray = new MergeSortedArrays().merge(arr1, arr2);
+        int[] expectedMergedArr = new int[]{1, 1, 1, 2, 2, 3};
+        for (int i = 0; i < mergedArray.length; i++) {
+            assert mergedArray[i] == expectedMergedArr[i];
+        }
+
+        arr1 = new int[]{1, 2, 3};
+        arr2 = new int[]{1, 1, 2};
+
+        mergedArray = new MergeSortedArrays().merge(arr1, arr2);
+        expectedMergedArr = new int[]{1, 1, 1, 2, 2, 3};
+        for (int i = 0; i < mergedArray.length; i++) {
+            assert mergedArray[i] == expectedMergedArr[i];
         }
     }
 }
