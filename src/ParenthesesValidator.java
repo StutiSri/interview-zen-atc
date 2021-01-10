@@ -40,7 +40,9 @@ public class ParenthesesValidator {
 
     private Map<Character, Character> openCloseParenthesesMap() {
         Map<Character, Character> openCloseParenthesesMap = new HashMap<>();
-
+        openCloseParenthesesMap.put('{', '}');
+        openCloseParenthesesMap.put('(', ')');
+        openCloseParenthesesMap.put('[', ']');
         return openCloseParenthesesMap;
     }
 }
