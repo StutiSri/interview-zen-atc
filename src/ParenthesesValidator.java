@@ -42,6 +42,14 @@ class ParenthesesValidator {
             }
             return elements[top--];
         }
+
+        /**
+         *
+         * @return - The number of elements that are currently being managed in the stack.
+         */
+        int getCurrentNumberOfElementsInStack(){
+            return top;
+        }
     }
 
     /**
@@ -69,7 +77,11 @@ class ParenthesesValidator {
                 }
             }
         }
-        return true;
+        /*
+         * If the stack is not empty, that means there are certain open brackets left that had no corresponding closing brackets
+         * Thereby invalidating the expression
+         */
+        return exprStack.getCurrentNumberOfElementsInStack() == -1;
     }
 
     public static void main(String[] args) {
